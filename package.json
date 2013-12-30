@@ -1,0 +1,31 @@
+{
+    "name": "MirrorMonkey-ui",
+    "version": "0.0.1",
+    "author": "vli",
+    "private": true,
+    "description": "Mirror Monkey HTML+JS+CSS UI.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "make test"
+    },
+    "engines": {
+        "node": "0.10.x"
+    },
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/MindFlowOy/mm-ui.git"
+    },
+    "peerDependencies": {
+    },
+    "devDependencies": {
+        "coffee-script": "~1.6.3",
+        "component": "*",
+        "component-jade": "*",
+        "component-stylus": "*",
+        "component-minify": "*"
+    },
+    "license": "MIT",
+    "dependencies": {
+    }
+}

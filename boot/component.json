@@ -1,0 +1,18 @@
+{
+    "name": "boot",
+    "description": "Main app boot component",
+    "dependencies": {
+        "component/assert": "*"
+    },
+    "scripts": [
+        "index.coffee"
+    ],
+    "styles": [
+        "base.styl"
+    ],
+    "templates": [
+        "app.jade",
+        "pet.jade"
+    ],
+    "local":["ionic"]
+}

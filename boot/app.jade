@@ -1,0 +1,39 @@
+//-script(type='text/ng-template', id='app.tpl.html').
+
+nav-page#app-page
+  //-
+      Create tabs with an icon and text label, using the tabs-positive style (blue by default),
+      and disabling header title animation when switching tabs.
+
+  tabs(tabs-style='tabs-icon-top', tabs-type='tabs-positive', animate-nav='false')
+    //-
+       Pets tab
+    tab(title='Pets', icon='icon ion-home', ng-controller='PetsTabCtrl')
+      content(has-header='true', has-tabs='true')
+        list
+          item(ng-repeat='pet in pets', type='item-text-wrap', href='#/pet/{{pet.id}}')
+            h3 {{pet.title}}
+            p {{pet.description}}
+    //-
+       Adoption tab
+    tab(title='Adopt', icon='icon ion-heart')
+      content(has-header='true', has-tabs='true')
+        .padding
+          h2 Adopt a pet today.
+        .list.list-inset
+          label.item.item-input
+            span.input-label Your name
+            input(type='text')
+          label.item.item-input
+            span.input-label Your email
+            input(type='password')
+          label.item.item-input
+            textarea(placeholder='Any more info?')
+          button.button.button-positive.button-block Adopt
+    //-
+       Home tab
+    tab(title='About', icon='icon ion-search')
+      content(has-header='true', has-tabs='true', padding='true')
+        h3 About this app
+        p
+          | This is a sample seed project for the Ionic Framework. Please change it to match your needs.

@@ -1,0 +1,26 @@
+{
+    "name": "ionic",
+    "description": "ionic components",
+    "dependencies": {
+    },
+    "main": "js/ionic.js",
+    "scripts": [
+        "js/ionic.js",
+        "js/angular/angular.js",
+        "js/angular/angular-animate.js",
+        "js/angular/angular-route.js",
+        "js/angular/angular-sanitize.js",
+        "js/angular/angular-touch.js",
+        "js/ionic-angular.js"
+    ],
+    "fonts": [
+        "fonts/ionicons.eot",
+        "fonts/ionicons.svg",
+        "fonts/ionicons.ttf",
+        "fonts/ionicons.woff"
+    ],
+    "styles": [
+        "css/ionic.css",
+        "css/themes/ionic-ios7.css"
+    ]
+}

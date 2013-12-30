@@ -1,0 +1,9 @@
+{
+  "name": "mm-ui",
+  "repo": "MindFlowOy/mm-ui",
+  "description": "MirrorMonkey HTML+JS+CSS UI module",
+  "version": "0.0.1",
+  "license": "MIT",
+  "local": ["ionic","boot"],
+  "paths": ["./"]
+}

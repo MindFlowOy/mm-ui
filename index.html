@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ionic Seed</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="build/build.css">
+
+    <!--scripts -->
+    <script src="build/build.js"></script>
+
+    <script >
+      require('boot')
+    </script>
+  </head>
+
+  <!-- 'starter' is the name of this angular module (js/app.js)-->
+  <body ng-app="starter">
+
+    <!-- Our navigation router with some animations set -->
+    <pane nav-router animation="slide-left-right-ios7">
+      <!-- The nav bar that will be updated as we navigate -->
+      <nav-bar class="nav-title-slide-ios7" type="bar-positive" back-button-type="button-icon" back-button-icon="icon ion-arrow-left-c"></nav-bar>
+
+      <!-- where the content of each page will be rendered -->
+      <ng-view></ng-view>
+    </pane>
+  </body>
+
+</html>
+
+
