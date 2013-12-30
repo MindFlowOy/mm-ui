@@ -12,7 +12,7 @@
     ],
     "templates": [
         "app.jade",
-        "pet.jade"
+        "question.jade"
     ],
     "local":["ionic"]
 }

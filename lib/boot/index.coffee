@@ -7,21 +7,21 @@ _touch = require 'ionic/js/angular/angular-touch.js'
 _ionicAngular = require 'ionic/js/ionic-angular.js'
 
 _appTemplate = require('./app')()
-_petTemplate = require('./pet')()
+_questionTemplate = require('./question')()
 
 ###
 *
 *
 *
 ###
-main = angular.module 'starter', [ 'ionic', 'ngRoute', 'ngAnimate', 'starter.services', 'starter.controllers' ]
+mm = angular.module 'mm', [ 'ionic', 'ngRoute', 'ngAnimate', 'mm.services', 'mm.controllers' ]
 
 ###
 *
 *
 *
 ###
-main.config ['$compileProvider', '$routeProvider', '$locationProvider',
+mm.config ['$compileProvider', '$routeProvider', '$locationProvider',
 ($compileProvider, $routeProvider, $locationProvider) ->
 
     $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
@@ -30,9 +30,9 @@ main.config ['$compileProvider', '$routeProvider', '$locationProvider',
         templateUrl: '/app.tpl.html'
         controller: 'AppCtrl'
 
-    $routeProvider.when '/pet/:petId',
-        templateUrl: '/pet.tpl.html'
-        controller: 'PetCtrl'
+    $routeProvider.when '/question/:questionId',
+        templateUrl: '/question.tpl.html'
+        controller: 'QuestionCtrl'
 
     $routeProvider.otherwise redirectTo: '/home'
 
@@ -43,11 +43,11 @@ main.config ['$compileProvider', '$routeProvider', '$locationProvider',
 *
 *
 ###
-main.run ['$window', '$document', '$rootScope', '$log', '$q', '$location', '$templateCache',
+mm.run ['$window', '$document', '$rootScope', '$log', '$q', '$location', '$templateCache',
 ($window, $document, $rootScope, $log, $q, $location, $templateCache) ->
 
     $templateCache.put '/app.tpl.html', _appTemplate
-    $templateCache.put '/pet.tpl.html', _petTemplate
+    $templateCache.put '/question.tpl.html', _questionTemplate
 
     $rootScope.$on '$routeChangeStart', (newRoute, oldRoute)->
         $log.info '$routeChangeStart'
@@ -103,14 +103,14 @@ main.run ['$window', '$document', '$rootScope', '$log', '$q', '$location', '$tem
 *
 ###
 
-starterSrvs = angular.module 'starter.services', []
+mmSrvs = angular.module 'mm.services', []
 
-starterSrvs.factory 'Pets', [ '$rootScope', '$scope', '$log'
+mmSrvs.factory 'QuestionSrv', [ '$rootScope', '$scope', '$log'
 ($rootScope, $scope, $log) ->
 
-    $log.info 'Pets  Srvs loaded'
+    $log.info 'QuestionSrv  loaded'
 
-    pets = [
+    questions = [
         id: 0
         title: 'Cats'
         description: 'Furry little creatures. Obsessed with plotting assassination, but never following through on it.'
@@ -129,21 +129,21 @@ starterSrvs.factory 'Pets', [ '$rootScope', '$scope', '$log'
     ]
 
     all: ->
-        pets
+        questions
 
-    get: (petId) ->
-        pets[petId]
+    get: (questionId) ->
+        questions[questionId]
 ]
 
 
-starterCtrls = angular.module 'starter.controllers', ['starter.services']
+mmCtrls = angular.module 'mm.controllers', ['mm.services']
 
 ###
 *
 *
 *
 ###
-starterCtrls.controller 'AppCtrl', [ '$rootScope', '$scope', '$log'
+mmCtrls.controller 'AppCtrl', [ '$rootScope', '$scope', '$log'
 ($rootScope, $scope, $log) ->
 
     $log.info 'App Ctrl loaded'
@@ -158,12 +158,12 @@ starterCtrls.controller 'AppCtrl', [ '$rootScope', '$scope', '$log'
 *
 *
 ###
-starterCtrls.controller 'PetsTabCtrl', [ '$rootScope', '$scope', '$log', 'Pets'
-($rootScope, $scope, $log, Pets) ->
+mmCtrls.controller 'QuestionListCtrl', [ '$rootScope', '$scope', '$log', 'QuestionSrv'
+($rootScope, $scope, $log, QuestionSrv) ->
 
-    $log.info 'Pets tab Ctrl loaded'
+    $log.info 'Question List Ctrl loaded'
 
-    $scope.pets = Pets.all()
+    $scope.questions = QuestionSrv.all()
 
     $scope.$on 'tab.shown', ->
         console.log 'tab show'
@@ -177,12 +177,12 @@ starterCtrls.controller 'PetsTabCtrl', [ '$rootScope', '$scope', '$log', 'Pets'
 *
 *
 ###
-starterCtrls.controller 'PetCtrl', [ '$rootScope', '$scope', '$log', '$routeParams', 'Pets'
-($rootScope, $scope, $log, $routeParams, Pets) ->
+mmCtrls.controller 'QuestionCtrl', [ '$rootScope', '$scope', '$log', '$routeParams', 'QuestionSrv'
+($rootScope, $scope, $log, $routeParams, QuestionSrv) ->
 
-    $log.info 'Pet  Ctrl loaded'
+    $log.info 'Question  Ctrl loaded'
 
-    $scope.pet = Pets.get($routeParams.petId)
+    $scope.question = QuestionSrv.get($routeParams.questionId)
 
 ]
 

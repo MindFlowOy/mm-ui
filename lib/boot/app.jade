@@ -7,19 +7,19 @@ nav-page#app-page
 
   tabs(tabs-style='tabs-icon-top', tabs-type='tabs-positive', animate-nav='false')
     //-
-       Pets tab
-    tab(title='Pets', icon='icon ion-home', ng-controller='PetsTabCtrl')
+       Questions tab
+    tab(title='Questions', icon='icon ion-home', ng-controller='QuestionListCtrl')
       content(has-header='true', has-tabs='true')
         list
-          item(ng-repeat='pet in pets', type='item-text-wrap', href='#/pet/{{pet.id}}')
-            h3 {{pet.title}}
-            p {{pet.description}}
+          item(ng-repeat='q in questions', type='item-text-wrap', href='#/question/{{q.id}}')
+            h3 {{q.title}}
+            p {{q.description}}
     //-
        Adoption tab
     tab(title='Adopt', icon='icon ion-heart')
       content(has-header='true', has-tabs='true')
         .padding
-          h2 Adopt a pet today.
+          h2 Answer a question today.
         .list.list-inset
           label.item.item-input
             span.input-label Your name
@@ -29,7 +29,7 @@ nav-page#app-page
             input(type='password')
           label.item.item-input
             textarea(placeholder='Any more info?')
-          button.button.button-positive.button-block Adopt
+          button.button.button-positive.button-block Send
     //-
        Home tab
     tab(title='About', icon='icon ion-search')
