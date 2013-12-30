@@ -4,8 +4,8 @@
     "description": "MirrorMonkey HTML+JS+CSS UI module",
     "version": "0.0.1",
     "license": "MIT",
-    "local": ["ionic","boot"],
-    "paths": ["./"],
+    "local": ["boot"],
+    "paths": ["lib"],
     "scripts": [],
     "styles": [],
     "fonts": [

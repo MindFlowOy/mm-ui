@@ -9,7 +9,7 @@ TEMPLATES = $(wildcard ./*/*.jade)
 #--use component-jscoverage
 
 build: index.html components $(SRC) $(STYLES) $(TEMPLATES) index.coffee index.html
-	@component build -v --dev --use "component-jade,component-stylus,build-coffee.js,component-minify" -n mm
+	@component build -v  --use "component-jade,component-stylus,build-coffee.js,component-minify" -n mm
 
 
 build-dev: index.html components $(SRC) $(STYLES) $(TEMPLATES) index.coffee index.html
