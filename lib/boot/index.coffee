@@ -14,7 +14,7 @@ _questionTemplate = require('./question')()
 *
 *
 ###
-mm = angular.module 'mm', [ 'ionic', 'ngRoute', 'ngAnimate', 'mm.services', 'mm.controllers' ]
+mm = angular.module 'mm', [ 'ionic', 'ngRoute', 'ngAnimate', 'mmSrvs', 'mmCtrls' ]
 
 ###
 *
@@ -103,8 +103,7 @@ mm.run ['$window', '$document', '$rootScope', '$log', '$q', '$location', '$templ
 *
 ###
 
-mmSrvs = angular.module 'mm.services', []
-
+mmSrvs = angular.module 'mmSrvs', []
 mmSrvs.factory 'QuestionSrv', [ '$rootScope', '$scope', '$log'
 ($rootScope, $scope, $log) ->
 
@@ -128,6 +127,7 @@ mmSrvs.factory 'QuestionSrv', [ '$rootScope', '$scope', '$log'
         description: 'An advanced pet. Needs millions of gallons of salt water. Will happily eat you.'
     ]
 
+    # Return/visible methods:
     all: ->
         questions
 
@@ -136,7 +136,7 @@ mmSrvs.factory 'QuestionSrv', [ '$rootScope', '$scope', '$log'
 ]
 
 
-mmCtrls = angular.module 'mm.controllers', ['mm.services']
+mmCtrls = angular.module 'mmCtrls', ['mmSrvs']
 
 ###
 *
