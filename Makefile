@@ -9,10 +9,11 @@ TEMPLATES = $(wildcard ./*/*.jade)
 #--use component-jscoverage
 
 build: index.html components $(SRC) $(STYLES) $(TEMPLATES) index.coffee index.html
-	@component build -v --dev --use "component-jade,component-stylus,build-coffee.js"
+	@component build -v --dev --use "component-jade,component-stylus,build-coffee.js,component-minify" -n mm
 
-build-prod: index.html components $(SRC) $(STYLES) $(TEMPLATES) index.coffee index.html
-	@component build -v --dev --use "component-jade,component-stylus,build-coffee.js,component-minify"
+
+build-dev: index.html components $(SRC) $(STYLES) $(TEMPLATES) index.coffee index.html
+	@component build -v --dev --use "component-jade,component-stylus,build-coffee.js" -n mm
 
 
 components: component.json
@@ -22,3 +23,5 @@ clean:
 	rm -fr build components
 
 .PHONY: clean
+
+.PHONY: livereload

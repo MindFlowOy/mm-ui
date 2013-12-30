@@ -1,13 +1,14 @@
 
 # mm-ui
 
-    MirrorMonkey HTML+JS+CSS ui base
+MirrorMonkey HTML+JS+CSS ui base
 
 ## Installation
 
 
     npm install -g component                // See: http://vimeo.com/53730178
-    npm install -g component-assets     // See: https://github.com/anthonyshort/component-assets
+
+    npm install jkroso/buildfresh -g        // See: https://github.com/jkroso/buildfresh
 
     npm install
 
@@ -33,26 +34,20 @@
 
     Watch changes for build:
 
-        watch make &
+        watch make build-dev &
 
             to stop watching:
 
                 fg and then ctrl+C
 
-
-    Adding components
-
-        component assets images:icons/* scripts:*.js styles:*.css files:*.scss
-        component assets scripts:*.js styles:*.css files:files/* images:images/* templates:templates/*
-
-### Templates:
-
-    component convert template.html
+    or
+        Use livereload to watch build/-directory
 
 
-## API
+    Build for production:
 
-s
+        make [build]
+
 
 ## License
 

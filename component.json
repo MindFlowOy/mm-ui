@@ -1,9 +1,21 @@
 {
-  "name": "mm-ui",
-  "repo": "MindFlowOy/mm-ui",
-  "description": "MirrorMonkey HTML+JS+CSS UI module",
-  "version": "0.0.1",
-  "license": "MIT",
-  "local": ["ionic","boot"],
-  "paths": ["./"]
+    "name": "mm-ui",
+    "repo": "MindFlowOy/mm-ui",
+    "description": "MirrorMonkey HTML+JS+CSS UI module",
+    "version": "0.0.1",
+    "license": "MIT",
+    "local": ["ionic","boot"],
+    "paths": ["./"],
+    "scripts": [],
+    "styles": [],
+    "fonts": [
+      "build/ionic/fonts/ionicons.eot",
+      "build/ionic/fonts/ionicons.svg",
+      "build/ionic/fonts/ionicons.ttf",
+      "build/ionic/fonts/ionicons.woff"
+    ],
+    "dependencies": {
+        "component/assert": "*"
+    }
+
 }
