@@ -102,10 +102,15 @@ mm.run ['$window', '$document', '$rootScope', '$log', '$q', '$location', '$templ
 *
 *
 ###
-
 mmSrvs = angular.module 'mmSrvs', []
-mmSrvs.factory 'QuestionSrv', [ '$rootScope', '$scope', '$log'
-($rootScope, $scope, $log) ->
+
+###
+*
+*
+*
+###
+mmSrvs.factory 'QuestionSrv', [ '$rootScope', '$log'
+($rootScope, $log) ->
 
     $log.info 'QuestionSrv  loaded'
 
@@ -135,7 +140,11 @@ mmSrvs.factory 'QuestionSrv', [ '$rootScope', '$scope', '$log'
         questions[questionId]
 ]
 
-
+###
+*
+*
+*
+###
 mmCtrls = angular.module 'mmCtrls', ['mmSrvs']
 
 ###
@@ -185,6 +194,3 @@ mmCtrls.controller 'QuestionCtrl', [ '$rootScope', '$scope', '$log', '$routePara
     $scope.question = QuestionSrv.get($routeParams.questionId)
 
 ]
-
-
-
