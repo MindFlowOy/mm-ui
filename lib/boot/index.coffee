@@ -1,4 +1,4 @@
-_ionic = require 'ionic'
+_ionic = require 'ionic/js/ionic.js'
 _angular = require 'ionic/js/angular/angular.js'
 _router = require 'ionic/js/angular/angular-route.js'
 _animate = require 'ionic/js/angular/angular-animate.js'

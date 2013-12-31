@@ -1,2 +1,4 @@
+# this is used only for standalone build
+
 module.exports = ->
-    "v 0.0.1"
+   boot = require 'boot'

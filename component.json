@@ -6,7 +6,7 @@
     "license": "MIT",
     "local": ["boot"],
     "paths": ["lib"],
-    "scripts": [],
+    "scripts": ["index.coffee"],
     "styles": [],
     "dependencies": {
         "component/assert": "*"
