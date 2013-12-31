@@ -8,12 +8,6 @@
     "paths": ["lib"],
     "scripts": [],
     "styles": [],
-    "fonts": [
-      "build/ionic/fonts/ionicons.eot",
-      "build/ionic/fonts/ionicons.svg",
-      "build/ionic/fonts/ionicons.ttf",
-      "build/ionic/fonts/ionicons.woff"
-    ],
     "dependencies": {
         "component/assert": "*"
     }

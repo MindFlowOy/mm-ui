@@ -41,7 +41,9 @@ MirrorMonkey HTML+JS+CSS ui base
                 fg and then ctrl+C
 
     or
-        Use livereload to watch build/-directory
+        Use livereload to watch '/build'-directory
+        and
+        >open index.html
 
 
     Build for production:
