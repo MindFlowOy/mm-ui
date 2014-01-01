@@ -2200,11 +2200,11 @@
  * --------------------------------------------------
  * Adapted from normalize.css and some reset.css. We don't care even one
  * bit about old IE, so we don't need any hacks for that in here.
- *
+ * 
  * There are probably other things we could remove here, as well.
  *
  * normalize.css v2.1.2 | MIT License | git.io/normalize
-
+ 
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
  */
@@ -5775,7 +5775,7 @@ a.button {
   transform: translate3d(100%, 0, 0); }
 
 /**
- * iOS7 style slide left to right
+ * iOS7 style slide left to right 
  * --------------------------------------------------
  */
 .slide-left-right-ios7 > .ng-enter, .slide-left-right-ios7.ng-enter,
@@ -6433,8 +6433,8 @@ a.button {
 /**
  * Utility Colors
  * --------------------------------------------------
- * Utility colors are added to help set a naming convention. You'll
- * notice we purposely do not use words like "red" or "blue", but
+ * Utility colors are added to help set a naming convention. You'll 
+ * notice we purposely do not use words like "red" or "blue", but 
  * instead have colors which represent an emotion or generic theme.
  */
 .light, a.light {

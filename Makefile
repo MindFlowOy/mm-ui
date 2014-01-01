@@ -11,7 +11,8 @@ phantomjs = node_modules/.bin/mocha-phantomjs --setting web-security=false --set
 
 default build: build/build.js
 
-
+help:
+	@echo "make build, release, clean"
 
 # For js-coverage see
 # https://github.com/Frapwings/component-jscoverage
@@ -28,7 +29,7 @@ build/build.js: node_modules components $(shell find lib)
 	@component build -v --dev --use "component-jade,component-stylus,build-coffee.js" --name mm-ui
 
 mm-ui.js: node_modules components $(shell find lib)
-	@$(component) build -v  --standalone mirrormonkey --use "component-jade,component-stylus,build-coffee.js" --out ./dist --name mm-ui
+	@$(component) build -v  -c --standalone mirrormonkey  --use "component-jade,component-stylus,build-coffee.js" --out ./dist --name mm-ui
 
 #for minified:
 #@$(component) build -v --dev --standalone mirrormonkey --use "component-jade,component-stylus,build-coffee.js,component-minify" --out ./dist --name mm-ui.min
@@ -44,7 +45,7 @@ components: component.json
 
 # add node_modules?
 clean:
-	rm -fr build components
+	rm -fr build dist components
 
 
 node_modules: package.json
