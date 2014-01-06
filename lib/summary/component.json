@@ -1,0 +1,9 @@
+{
+    "name": "summary",
+    "description": "Summary component",
+    "scripts": [
+        "index.coffee",
+        "ctrl.coffee"
+    ],
+    "local":["common"]
+}

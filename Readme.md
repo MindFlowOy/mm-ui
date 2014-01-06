@@ -48,7 +48,7 @@ MirrorMonkey HTML+JS+CSS ui base
 
     Build for production:
 
-        make [build]
+        make release
 
 
 ## License

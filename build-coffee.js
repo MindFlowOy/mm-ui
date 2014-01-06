@@ -7,10 +7,12 @@ module.exports = function(builder) {
     // Monkey patching the builder alias()-method so that it doesn't add coffee files to aliases
     var orgAlias = builder.alias;
     builder.constructor.prototype.alias = function(a,b) {
-        if (a.indexOf('coffee') != -1) return;
-        // Or change the aliases?
-        // a = a.replace('.coffee', '.js');
-        // b = b.replace('.coffee', '.js');
+        if (a.indexOf('coffee') != -1) {
+            //return;
+            // Or change the aliases?
+            a = a.replace('.coffee', '.js');
+            b = b.replace('.coffee', '.js');
+        }
         var result = orgAlias.call(this, a, b);
         //console.log('=', result);
         return result;

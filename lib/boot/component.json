@@ -14,5 +14,5 @@
         "app.jade",
         "question.jade"
     ],
-    "local":["ionic"]
+    "local":["summary","questions","ionic"]
 }

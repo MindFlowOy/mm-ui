@@ -1,0 +1,10 @@
+{
+    "name": "questions",
+    "description": "Questions component",
+    "scripts": [
+        "index.coffee",
+        "ctrl.coffee",
+        "srv.coffee"
+    ],
+    "local":["common"]
+}
