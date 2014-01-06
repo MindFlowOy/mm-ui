@@ -34573,7 +34573,7 @@ app.run([
 ]);
 
 });
-require.register("mm-ui/jade-runtime.js", function(exports, require, module){
+require.register("app-ui/jade-runtime.js", function(exports, require, module){
 
 jade = (function(exports){
 /*!
@@ -34754,7 +34754,7 @@ exports.rethrow = function rethrow(err, filename, lineno){
 
 })({});
 });
-require.register("mm-ui/index.js", function(exports, require, module){
+require.register("app-ui/index.js", function(exports, require, module){
 module.exports = function() {
   var boot;
   return boot = require("boot");
@@ -34780,11 +34780,11 @@ module.exports = 'nav-page(title=\'title\')\n     content(has-header=\'true\', h
 require.register("boot/template-detail.jade", function(exports, require, module){
 module.exports = 'nav-page(title=\'zone.title\')\n    content(has-header=\'true\')\n        .padding\n            h2{{ zone.title }}\n            p {{ zone.description }}\n\n        ul.list\n            li.item.item-checkbox(ng-repeat=\'q in zone.questions\')\n                label.checkbox\n                    input(type=\'checkbox\')\n                |{{q.txt}}\n\n        .padding\n            label.item.item-input\n                textarea(placeholder=\'Any more info?\')\n\n          button.button.button-positive.button-block Send\n';
 });
-require("mm-ui/jade-runtime");
+require("app-ui/jade-runtime");
 if (typeof exports == "object") {
-  module.exports = require("mm-ui");
+  module.exports = require("app-ui");
 } else if (typeof define == "function" && define.amd) {
-  define(function(){ return require("mm-ui"); });
+  define(function(){ return require("app-ui"); });
 } else {
-  this["mirrormonkey"] = require("mm-ui");
+  this["mirrormonkey"] = require("app-ui");
 }})();
