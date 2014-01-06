@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>MirrorMonkey Seed</title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <title>MirrorMonkey Seed</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 
 
 
-    <!-- css -->
-    <link rel="stylesheet" href="build/mm-ui.css">
+        <!-- css -->
+        <link rel="stylesheet" href="build/app-ui.css">
 
-    <!--scripts -->
-    <script src="build/mm-ui.js"></script>
+        <!--scripts -->
+        <script src="build/app-ui.js"></script>
 
-    <script >
-      require('boot')
-    </script>
+        <script >
+            require('boot')
+        </script>
 
-  </head>
+    </head>
 
-  <!-- 'mm' is the name of this MirrorMonkey -->
-  <body ng-app="mm">
+    <!-- 'app' is the name of this Application -->
+    <body ng-app="app">
 
-    <!-- Our navigation router with some animations set -->
-    <pane nav-router animation="slide-left-right-ios7">
-      <!-- The nav bar that will be updated as we navigate -->
-      <nav-bar class="nav-title-slide-ios7" type="bar-positive" back-button-type="button-icon" back-button-icon="icon ion-arrow-left-c"></nav-bar>
+        <!-- Our navigation router with some animations set -->
+        <pane nav-router animation="slide-left-right-ios7">
 
-      <!-- where the content of each page will be rendered -->
-      <ng-view></ng-view>
-    </pane>
-  </body>
+            <!-- The nav bar that will be updated as we navigate -->
+            <nav-bar class="nav-title-slide-ios7" type="bar-positive" back-button-type="button-icon" back-button-icon="icon ion-arrow-left-c"></nav-bar>
+
+            <!-- where the content of each page will be rendered -->
+            <ng-view></ng-view>
+
+        </pane>
+    </body>
 
 </html>
 

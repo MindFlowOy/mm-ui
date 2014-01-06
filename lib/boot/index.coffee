@@ -1,59 +1,56 @@
-require 'ionic/js/ionic.js'
-require 'ionic/js/angular/angular.js'
-require 'ionic/js/angular/angular-route.js'
-require 'ionic/js/angular/angular-animate.js'
-require 'ionic/js/angular/angular-sanitize.js'
-require 'ionic/js/angular/angular-touch.js'
-require 'ionic/js/ionic-angular.js'
-require 'questions'
+# Ionic and angular components
+require 'ionic'
+
+# Application sub-components
+require 'zones'
 require 'summary'
 
-_appTemplate = require('./app')()
-_questionTemplate = require('./question')()
 
 ###
 *
-*
+* Main app
 *
 ###
-mm = angular.module 'mm', [ 'ionic', 'ngRoute', 'ngAnimate', 'mmSrvs', 'mmCtrls' ]
+app = angular.module 'app', [ 'ionic', 'ngRoute', 'ngAnimate', 'appSrvs', 'appCtrls' ]
+
 
 ###
 *
-*
+* App config
 *
 ###
-mm.config ['$compileProvider', '$routeProvider', '$locationProvider',
+app.config ['$compileProvider', '$routeProvider', '$locationProvider',
 ($compileProvider, $routeProvider, $locationProvider) ->
 
     $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
 
-    $routeProvider.when '/home',
-        templateUrl: '/app.tpl.html'
+    $routeProvider.when '/summary',
+        templateUrl: '/template-summary.tpl.html'
         controller: 'SummaryCtrl'
 
-    $routeProvider.when '/questions',
-        templateUrl: '/app.tpl.html'
-        controller: 'AppCtrl'
+    $routeProvider.when '/list',
+        templateUrl: '/template-list.tpl.html'
+        controller: 'ListCtrl'
 
-    $routeProvider.when '/question/:questionId',
-        templateUrl: '/question.tpl.html'
-        controller: 'QuestionCtrl'
+    $routeProvider.when '/detail/:zoneId',
+        templateUrl: '/template-detail.tpl.html'
+        controller: 'DetailCtrl'
 
-    $routeProvider.otherwise redirectTo: '/home'
+    $routeProvider.otherwise redirectTo: '/summary'
 
 ]
 
 ###
 *
-*
+* App templates, routes and soem helpers
 *
 ###
-mm.run ['$window', '$document', '$rootScope', '$log', '$q', '$location', '$templateCache',
+app.run ['$window', '$document', '$rootScope', '$log', '$q', '$location', '$templateCache',
 ($window, $document, $rootScope, $log, $q, $location, $templateCache) ->
 
-    $templateCache.put '/app.tpl.html', _appTemplate
-    $templateCache.put '/question.tpl.html', _questionTemplate
+    $templateCache.put '/template-summary.tpl.html', require('./template-summary')()
+    $templateCache.put '/template-list.tpl.html', require('./template-list')()
+    $templateCache.put '/template-detail.tpl.html', require('./template-detail')()
 
     $rootScope.$on '$routeChangeStart', (newRoute, oldRoute)->
         $log.info '$routeChangeStart'

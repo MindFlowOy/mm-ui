@@ -1,21 +1,40 @@
-###
-*
-* Expose 'SummaryCtrl' as the module
-*
-###
-module.exports = mmCtrls = angular.module 'mmCtrls'
 
 ###
 *
 *
 *
 ###
-mmCtrls.controller 'SummaryCtrl', [ '$rootScope', '$scope', '$log'
-($rootScope, $scope, $log) ->
+summaryCtrl = ($rootScope, $scope, $location, $log) ->
 
     $log.info 'Summary Ctrl loaded'
 
-    $scope.init = () ->
-        $log.log 'Summary Ctrl init'
-        return false
-]
+    $scope.title = 'App'
+
+
+    $scope.leftButtons = []
+    ###
+    [
+        type: 'button-positive'
+        content: "<i class='icon ion-navicon'></i>"
+        tap: (e)->
+            $log.log 'Nav'
+    ]
+    ###
+
+
+    $scope.rightButtons = [
+        type: 'button-clear'
+        content: "<i class='icon ion-plus'></i>"
+        tap: (e) =>
+            $log.log 'Edit tap'
+            $location.path("/list");
+
+    ]
+
+
+###
+*
+* Expose 'SummaryCtrl'
+*
+###
+module.exports = angular.module('appCtrls').controller 'SummaryCtrl', [ '$rootScope', '$scope', '$location', '$log', summaryCtrl]

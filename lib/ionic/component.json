@@ -3,8 +3,9 @@
     "description": "ionic components",
     "dependencies": {
     },
-    "main": "js/ionic.js",
+    "main": "index.js",
     "scripts": [
+        "index.js",
         "js/ionic.js",
         "js/angular/angular.js",
         "js/angular/angular-animate.js",

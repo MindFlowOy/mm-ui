@@ -1,6 +1,6 @@
 {
     "name": "common",
-    "description": "Common helpers for mm-ui",
+    "description": "Common helpers for app-ui",
     "scripts": [
         "index.coffee",
         "base.coffee"

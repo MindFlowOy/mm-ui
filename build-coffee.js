@@ -8,8 +8,7 @@ module.exports = function(builder) {
     var orgAlias = builder.alias;
     builder.constructor.prototype.alias = function(a,b) {
         if (a.indexOf('coffee') != -1) {
-            //return;
-            // Or change the aliases?
+            // just returning doesn't work so  changing the aliases
             a = a.replace('.coffee', '.js');
             b = b.replace('.coffee', '.js');
         }

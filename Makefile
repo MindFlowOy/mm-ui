@@ -20,25 +20,25 @@ help:
 # https://github.com/Frapwings/component-jscoverage/blob/master/example/Makefile
 #--use component-jscoverage
 #build-dev: index.html components $(SRC) $(STYLES) $(TEMPLATES) index.coffee index.html
-#	@component build -v --dev --use "component-jade,component-stylus,build-coffee.js" -n mm-ui
+#	@component build -v --dev --use "component-jade,component-stylus,build-coffee.js" -n app-ui
 
 #build: index.html components $(SRC) $(STYLES) $(TEMPLATES) index.coffee index.html
-#	@component build -v  --use "component-jade,component-stylus,build-coffee.js,component-minify" -n mm-ui
+#	@component build -v  --use "component-jade,component-stylus,build-coffee.js,component-minify" -n app-ui
 
 build/build.js: node_modules components $(shell find lib)
-	@component build -v --dev --use "component-jade,component-stylus,build-coffee.js" --name mm-ui
+	@component build -v --dev --use "component-jade,component-stylus,build-coffee.js" --name app-ui
 
-mm-ui.js: node_modules components $(shell find lib)
-	@$(component) build -v  -c --standalone mirrormonkey  --use "component-jade,component-stylus,build-coffee.js" --out ./dist --name mm-ui
+app-ui.js: node_modules components $(shell find lib)
+	@$(component) build -v  -c --standalone mirrormonkey  --use "component-jade,component-stylus,build-coffee.js" --out ./dist --name app-ui
 
 #for minified:
-#@$(component) build -v --dev --standalone mirrormonkey --use "component-jade,component-stylus,build-coffee.js,component-minify" --out ./dist --name mm-ui.min
+#@$(component) build -v --dev --standalone mirrormonkey --use "component-jade,component-stylus,build-coffee.js,component-minify" --out ./dist --name app-ui.min
 #or
-#@$(uglifyjs) ./dist/mm-ui.js --output mm-ui.min.js
+#@$(uglifyjs) ./dist/app-ui.js --output app-ui.min.js
 
 
 # add 'test' target to release once exist
-release: mm-ui.js
+release: app-ui.js
 
 components: component.json
 	@component install --dev

@@ -1,6 +1,6 @@
 {
-    "name": "questions",
-    "description": "Questions component",
+    "name": "zones",
+    "description": "Zones component",
     "scripts": [
         "index.coffee",
         "ctrl.coffee",

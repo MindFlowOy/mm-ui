@@ -1,0 +1,17 @@
+nav-page(title='zone.title')
+    content(has-header='true')
+        .padding
+            h2{{ zone.title }}
+            p {{ zone.description }}
+
+        ul.list
+            li.item.item-checkbox(ng-repeat='q in zone.questions')
+                label.checkbox
+                    input(type='checkbox')
+                |{{q.txt}}
+
+        .padding
+            label.item.item-input
+                textarea(placeholder='Any more info?')
+
+          button.button.button-positive.button-block Send

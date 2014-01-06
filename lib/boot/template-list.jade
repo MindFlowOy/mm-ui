@@ -1,0 +1,8 @@
+nav-page(title='title')
+     content(has-header='true', has-tabs='true')
+        list
+            a.item.item-icon.left(ng-repeat='z in zones', type='item-text-wrap', href='#/detail/{{z.id}}')
+                i.icon(data-ng-class='z.icon')
+                |{{z.title}}
+
+                span.item-note {{z.description}}

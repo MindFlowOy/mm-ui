@@ -8,11 +8,12 @@
         "index.coffee"
     ],
     "styles": [
-        "base.styl"
+        "style-app.styl"
     ],
     "templates": [
-        "app.jade",
-        "question.jade"
+        "template-summary.jade",
+        "template-list.jade",
+        "template-detail.jade"
     ],
-    "local":["summary","questions","ionic"]
+    "local":["summary","zones","ionic"]
 }
