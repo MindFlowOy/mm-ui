@@ -3,7 +3,7 @@ nav-page#app-page
       Create tabs with an icon and text label, using the tabs-positive style (blue by default),
       and disabling header title animation when switching tabs.
 
-  tabs(tabs-style='tabs-icon-top', tabs-type='tabs-positive', animate-nav='false')
+  tabs(tabs-style='tabs-icon-top', tabs-type='tabs-positive', animate-nav='true')
     //-
        Home tab
     tab(title='Home', icon='icon ion-home')
@@ -18,22 +18,7 @@ nav-page#app-page
           item(ng-repeat='q in questions', type='item-text-wrap', href='#/question/{{q.id}}')
             h3 {{q.title}}
             p {{q.description}}
-    //-
-       Question tab
-    tab(title='Adopt', icon='icon ion-heart')
-      content(has-header='true', has-tabs='true')
-        .padding
-          h2 Answer a question today.
-        .list.list-inset
-          label.item.item-input
-            span.input-label Your name
-            input(type='text')
-          label.item.item-input
-            span.input-label Your email
-            input(type='password')
-          label.item.item-input
-            textarea(placeholder='Any more info?')
-          button.button.button-positive.button-block Send
+
     //-
        About tab
     tab(title='About', icon='icon ion-search')

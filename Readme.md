@@ -42,7 +42,8 @@ MirrorMonkey HTML+JS+CSS ui base
 
     or
         Use livereload to watch '/build'-directory
-        and
+        and build after every save(sublime cmd+B)
+
         >open index.html
 
 

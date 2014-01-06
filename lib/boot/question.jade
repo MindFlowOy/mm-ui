@@ -1,3 +1,14 @@
 nav-page(title='question.title')
     content(has-header='true', padding='true')
-        | {{ question.description }}
+        .padding
+            h2{{ question.title }}
+            p {{ question.description }}
+        .list.list-inset
+            label.item.item-input
+                span.input-label Your name
+                input(type='text')
+
+            label.item.item-input
+                textarea(placeholder='Any more info?')
+
+          button.button.button-positive.button-block Send
